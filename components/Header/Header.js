@@ -7,7 +7,7 @@ import MessageIcon from '@mui/icons-material/TextsmsOutlined';
 import NotificationIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import DownIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 import Link from 'next/link';
-const Header = () => {
+export const Header = () => {
   return (
     <div>
       <Paper className={'fixed z-[1] w-full bg-red-200 shadow-none'}>
@@ -41,11 +41,11 @@ const Header = () => {
                 <NotificationIcon className="text-black" />
               </IconButton>
               <div className="flex items-center gap-2">
-                <Link href={'/'}>
+                <Link href={'/profile/id'}>
                   <Avatar
                     className="rounded"
                     alt="avatar"
-                    fill
+                    fill={true}
                     src="https://mui.com/static/images/avatar/1.jpg"
                   />
                 </Link>
@@ -61,4 +61,3 @@ const Header = () => {
   );
 };
 
-export default Header;

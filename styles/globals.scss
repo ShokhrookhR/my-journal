@@ -4,6 +4,19 @@
 body{
   background:#F2F2F2;
 }
+.content {
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+
+  &--full {
+    max-width: 1000px;
+  }
+}
+
+
+
+
 /* html,
 body {
   padding: 0;

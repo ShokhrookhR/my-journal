@@ -1,5 +1,7 @@
-import Layout from '../components/Layout';
-import '../styles/globals.css';
+import { ThemeProvider } from '@mui/system';
+import Layout from '../components/Layout/Layout';
+import { theme } from '../theme';
+import '../styles/globals.scss';
 // import { Roboto } from '@next/font/google';
 
 // const roboto = Roboto({
@@ -9,9 +11,11 @@ import '../styles/globals.css';
 // });
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ThemeProvider>
   );
 }
 

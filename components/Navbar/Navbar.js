@@ -4,49 +4,31 @@ import React from 'react';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
 import MessageIcon from '@mui/icons-material/TextsmsOutlined';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+import ListIcon from '@mui/icons-material/FormatListBulleted';
 
 import { Button } from '@mui/material';
 
-const Navbar = () => {
+export const Navbar = () => {
+  const menu = [
+    { text: 'Лента', icon: <WhatshotIcon />, path: '/' },
+    { text: 'Сообщения', icon: <MessageIcon />, path: '/' },
+    { text: 'Рейтинг SN', icon: <TrendingUpIcon />, path: '/rating' },
+    { text: 'Подписки', icon: <ListIcon />, path: '/' },
+  ];
   return (
-    <div className={'w-[200px] px-5 hidden md:block'}>
-      <ul className="fixed">
-        <li className="">
-          <Link href={''}>
-            <Button className="text-inherit w-full flex justify-start gap-3 hover:bg-white">
-              <WhatshotIcon />
-              Лента
-            </Button>
-          </Link>
-        </li>
-        <li className="">
-          <Link href={''}>
-            <Button className="text-inherit w-full flex justify-start gap-3 hover:bg-white">
-              <MessageIcon />
-              Сообщения
-            </Button>
-          </Link>
-        </li>
-        <li className="">
-          <Link href={''}>
-            <Button className="text-inherit w-full flex justify-start gap-3 hover:bg-white">
-              <TrendingUpIcon />
-              Рейтинг
-            </Button>
-          </Link>
-        </li>
-        <li className="">
-          <Link href={''}>
-            <Button className="text-inherit w-full flex justify-start gap-3 hover:bg-white">
-              <FormatListBulletedIcon />
-              Подписки
-            </Button>
-          </Link>
-        </li>
+    <div className="sticky w-[200px] top-20">
+      <ul className="flex flex-col gap-1">
+        {menu.map((item) => (
+          <li className="" key={item.text}>
+            <Link href={item.path}>
+              <Button className="text-inherit w-full flex justify-start gap-3 ">
+                {item.icon}
+                {item.text}
+              </Button>
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   );
 };
-
-export default Navbar;
