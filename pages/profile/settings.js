@@ -22,6 +22,14 @@ const settings = () => {
           <TextField
             required
             id="outlined-required"
+            label="E-mail"
+            size="small"
+            fullWidth
+            variant="outlined"
+          />
+          <TextField
+            required
+            id="outlined-required"
             label="Пароль"
             size="small"
             fullWidth

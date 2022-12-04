@@ -9,6 +9,7 @@ import {
   Tabs,
   Tab,
 } from '@mui/material';
+import { FollowButton } from '../components/FollowButton/FollowButton';
 
 import { MainLayout } from '../components/Layout/MainLayout';
 // import { FollowButton } from '../components/FollowButton';
@@ -46,7 +47,9 @@ const Rating = () => {
                 <span className="mr-4 ">1</span>Вася Пупкин
               </TableCell>
               <TableCell align="right">540</TableCell>
-              <TableCell align="right">{/* <FollowButton /> */}</TableCell>
+              <TableCell align="right">
+                <FollowButton />
+              </TableCell>
             </TableRow>
           </TableBody>
         </Table>
